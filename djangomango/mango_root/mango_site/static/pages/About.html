@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %} - <!-- allows to add files from static folder-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About</title>
+    <script src="../static/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/style/playWithStyle.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alegreya Sans'>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../static/images/Logo.png" width="100" height="50" alt="" title="">
+            </div>
+            <nav>
+                <a href="../">Search Project</a>
+                <a href="../addproject/">Add Project</a>
+                <a href="../instructions/">Instructions</a>
+                <a class="active" href="../about/">About</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <p><b>Contact us form</b></p>
+        <!-- Here we will have a contact us form torecieve data from user-->
+        <div class="ContactUs">
+            Name: <input type="text" id="Name" name="Name" value="Test"><br>
+            Email: <input type="text" id="Email" name="Email" value="test@tes.com"><br>
+            Message: <input type="text" id="Message" name="Message" value="This is my message for this form submit"><br>
+            <button onclick="contactUs()">Submit</button>
+        </div>
+    </div>
+
+<!-- This div to display data that is recieved from databese or from user -->
+    <div class="containerTester">
+            <p><b>Content from the form</b></p>
+        <div class="answer">
+            <p id="answer"></p>
+
+        </div>
+    </div>
+<!-- footer of the website -->
+    <div class="container">
+        <p>This is footer text</p>
+        <div class="footer">
+            <p id="demo"></p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

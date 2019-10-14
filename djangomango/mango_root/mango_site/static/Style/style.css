@@ -1,0 +1,86 @@
+body{
+margin: 0;
+padding: 0;
+font-family: Tititllium Web;
+color: darkgray;
+background: #f3f3f3;
+}
+
+h2{
+color: black;
+}
+
+.container{
+    max-width: 960px;
+    width: 96%;
+    margin: auto;
+}
+
+
+/*-------------------HEADER-----------*/
+/* Style the header */
+
+header{
+    background: #fff;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+/* Style the logo image */
+.logo{
+    float: left;
+    margin-top: 10px;
+}
+/* Style the ganeral view for nav bar */
+nav{
+    float: center;
+    line-height: 70px;
+}
+
+/* Style the nav bar pages links */
+nav a{
+    display: inline;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 10px;
+    background: #f3f3f3;
+    line-height: normal;
+}
+
+nav a:hover{
+    background-color: rgb(193, 230, 193);
+}
+
+nav a.active{
+    background-color: #555555;
+    color: white; 
+}
+
+* {
+    box-sizing: border-box;
+  }
+/* Style the search box inside the search menu */
+.searchMenu input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background-color: #ffffff;
+  }
+.searchMenu button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #555555;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}
+
+.searchMenu button:hover {
+    background: #929292;
+}

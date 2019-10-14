@@ -1,0 +1,23 @@
+[33mcommit 2d423e09bfd69dcf9aa6270ab5054ed812f3ca46[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Yurii Sm <yuriy93smyk@gmail.com>
+Date:   Mon Sep 30 22:03:42 2019 +0200
+
+    added text to the about page
+
+[33mcommit fc182bcb822cca13db935c06fd68accc215fbfc1[m
+Author: Yuliia <luba-09@ukr.net>
+Date:   Mon Sep 30 22:51:08 2019 +0300
+
+    changed the logo
+
+[33mcommit ff701b7e73c2fd0ba9cae62dcf40dbfe5633f33a[m
+Author: imaydych <ivan.maydych@gmail.com>
+Date:   Mon Sep 23 21:26:26 2019 +0200
+
+    test
+
+[33mcommit 5cd669bfe3813bdac6e09c581ae053b7010da7d1[m
+Author: Yurii <yuriy93smyk@gmail.com>
+Date:   Sun Sep 22 23:06:02 2019 +0200
+
+    this is first commit. Created nav menu and subpages. Created search input and button for search input

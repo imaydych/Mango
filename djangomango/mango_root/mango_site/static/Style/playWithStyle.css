@@ -1,0 +1,9 @@
+.containerTester{
+    background-color: rgb(190, 151, 151);
+    max-width: 960px;
+    width: 96%;
+    margin: auto;
+}
+p{
+    color: black;
+}
