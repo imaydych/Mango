@@ -14,11 +14,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#make template path dynamical
-#SETTINGS_DIR = os.path.dirname(__file__)
-#PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
-#PROJECT_PATH = os.path.abspath(PROJECT_PATH)
-#path_dynamic = str(PROJECT_PATH)
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,7 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth.registration',
+    'rest_auth',
+    'crispy_forms',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dry_rest_permissions',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +137,26 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'mango_site/static'),
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated', ),
+
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+}
+
+
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_REDIRECT_URL = '/'
+
+
+SITE_ID = 3
