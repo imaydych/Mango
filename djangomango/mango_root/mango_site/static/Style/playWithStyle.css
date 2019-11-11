@@ -1,9 +1,46 @@
-.containerTester{
-    background-color: rgb(190, 151, 151);
+.containerTester {
+    background-color: rgb(231, 231, 231);
     max-width: 960px;
     width: 96%;
     margin: auto;
 }
-p{
+
+p {
     color: black;
 }
+
+/* Table style START */
+table {
+    color: black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+
+}
+
+th {
+    background-color: lightyellow;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/*Table style END*/

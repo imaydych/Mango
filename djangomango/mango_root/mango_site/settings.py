@@ -153,10 +153,14 @@ REST_FRAMEWORK = {
 }
 
 
-# CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-
 LOGIN_REDIRECT_URL = '/'
 
 
 SITE_ID = 3
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}

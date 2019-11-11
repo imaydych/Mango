@@ -61,6 +61,10 @@ nav a.active{
     box-sizing: border-box;
   }
 /* Style the search box inside the search menu */
+.searchMenu {
+    margin-top:20px;
+    margin-bottom:90px;
+   }
 .searchMenu input[type=text] {
     padding: 10px;
     font-size: 17px;
@@ -83,4 +87,48 @@ nav a.active{
 
 .searchMenu button:hover {
     background: #929292;
+}
+
+
+/* Table style START */
+table {
+    color: black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+
+}
+
+th {
+    background-color: lightyellow;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/*Table style END*/
+
+.containerTester {
+    background-color: rgb(231, 231, 231);
+    max-width: 960px;
+    width: 96%;
+    margin: auto;
 }

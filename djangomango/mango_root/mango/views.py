@@ -1,17 +1,17 @@
 from django.shortcuts import render
-from rest_framework import viewsets
-from .serializers import MangoAboutSerializer, UserSerializer, GroupSerializer
-from .models import MangoAbout
+from rest_framework import viewsets, permissions
+from .serializers import AddProjectSerializer, UserSerializer, GroupSerializer
+from .models import AddProject
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework import generics
 from django.contrib.auth.models import User, Group
-# from dry_rest_permissions.generics import DRYPermissions
+from . import custompermission
 
 
 # Create your views here.
 
 
-# Static views
+# Static views - links to page html templates
 def instruction(request):
     return render(request, 'Instructions.html')
 
@@ -28,28 +28,35 @@ def addproject(request):
     return render(request, 'AddProject.html')
 
 
-class MangoAboutViewSet(viewsets.ModelViewSet):
-    queryset = MangoAbout.objects.all()
-    serializer_class = MangoAboutSerializer
+# API views
+class ListAddProject(generics.ListCreateAPIView):
+    # View all objects from the table
+    queryset = AddProject.objects.all()
+    serializer_class = AddProjectSerializer
     filter_backends = (SearchFilter, OrderingFilter)
-#    MangoAbout.owner = request.user
-    search_fields = ['id', 'name', 'email', 'message', 'inserted_timestamp']
+    search_fields = ['id', 'name', 'start', 'end', 'category', 'description',
+                     'resources', 'contributors', 'inserted_timestamp']
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+    permission_classes = (
+        permissions.IsAuthenticated,
+        custompermission.IsCurrentUserOwner,
+    )
 
 
-# try autorize
-class ListMangoAbout(generics.ListCreateAPIView):
-    queryset = MangoAbout.objects.all()
-    serializer_class = MangoAboutSerializer
-    filter_backends = (SearchFilter, OrderingFilter)
-    search_fields = ['id', 'name', 'email', 'message', 'inserted_timestamp']
+class DetailAddProject(generics.RetrieveUpdateDestroyAPIView):
+    # Check one object from the table, update, delete it
+    queryset = AddProject.objects.all()
+    serializer_class = AddProjectSerializer
+    permission_classes = (
+        permissions.IsAuthenticated,
+        custompermission.IsCurrentUserOwner,
+    )
 
 
-class DetailMangoAbout(generics.RetrieveUpdateDestroyAPIView):
-    queryset = MangoAbout.objects.all()
-    serializer_class = MangoAboutSerializer
-
-
-# users
+# Users
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.

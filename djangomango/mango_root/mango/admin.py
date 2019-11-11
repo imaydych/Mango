@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import MangoAbout
+from .models import AddProject
 
 
 # Register your models here.
 
-admin.site.register(MangoAbout)
+admin.site.register(AddProject)
 

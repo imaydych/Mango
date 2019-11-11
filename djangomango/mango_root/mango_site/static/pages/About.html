@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %} - <!-- allows to add files from static folder-->
+{% load static %} -
+<!-- allows to add files from static folder-->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About</title>
-    <script src="../static/main.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../static/style/style.css">
     <link rel="stylesheet" type="text/css" href="../static/style/playWithStyle.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alegreya Sans'>
@@ -31,31 +32,69 @@
         <p><b>Contact us form</b></p>
         <!-- Here we will have a contact us form torecieve data from user-->
         <div class="ContactUs">
-            Name: <input type="text" id="Name" name="Name" value="Test"><br>
-            Email: <input type="text" id="Email" name="Email" value="test@tes.com"><br>
-            Message: <input type="text" id="Message" name="Message" value="This is my message for this form submit"><br>
+            Name: <input type="text" id="Name" name="Name" value="Banana"><br>
+            Email: <input type="text" id="Email" name="Email" value="Horse@go.com"><br>
+            Message: <input type="text" id="Message" name="Message" value="grass is green"><br>
             <button onclick="contactUs()">Submit</button>
+            <p><b>Get data from server</b></p>
+            <button onclick="getTestData()">GET DATA from test server</button>
+            <button onclick="getData()">GET DATA from Mango server</button>
         </div>
     </div>
-
-<!-- This div to display data that is recieved from databese or from user -->
+    <!-- This div to display data that is recieved from databese or from user -->
     <div class="containerTester">
-            <p><b>Content from the form</b></p>
-        <div class="answer">
-            <p id="answer"></p>
+        <p><b>Content from the form</b></p>
+        <p id="answer"></p>
+        <p id="demo"></p>
+        <div class="searchMenu">
+            <!-- onkeyup="SearchInContactUsForm()" -->
+            <input id="SearchInput" type="text" placeholder="Enter text...">
+            <button onclick="SearchInContactUsForm()" type="button">Search</button>
+            <p id="forTest"></p>
+        </div>
+        <div class="tableView">
+            <!-- <p id="answer"></p> -->
+            <!-- Table to display JSON file -->
+            <table id="tableForm">
+                <tr id="tableContent">
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+            </table>
 
         </div>
+        <select id="rowLimit" onchange="getData()">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+        </select>
+        <button id="nextPage" value="rowLimit" onclick="test()">Next page</button> 
+        <p id="demo1"></p>
+        <p id="rowCount"></p>
     </div>
-<!-- footer of the website -->
+
+    <!-- End of table to display JSON file -->
+
+    <!-- footer of the website -->
     <div class="container">
-        <p><b>Get data from server</b></p>
-        <button onclick="getData()">GET DATA</button>
         <div class="footer">
-            <p id="demo"></p>
+            <div class="content-wrap">
 
+                <!-- <h2><b>Keep in touch!</b></h2>
+
+                <div class="contact-info">
+                    <a href="https://www.linkedin.com" target="_blank">Linkedin</a>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                    <p>We strongly recommend to visit this page <a href="" target="_blank"> for more information.</p>
+
+                </div> -->
+
+                <p>Copyright 2019 by TEAM</p>
+            </div>
         </div>
     </div>
-
+    <script src="../static/main.js"></script>
 </body>
 
 </html>

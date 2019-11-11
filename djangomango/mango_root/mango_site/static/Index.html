@@ -25,35 +25,54 @@
             </nav>
         </div>
     </header>
+<!-- search button START -->
+<div class="container">
+        <p>Choose filter</p>
+         <input id="filterProjectName" type="checkbox" name="projectNameColumn" value="Project Name"> Project Name
+         <input id="filterYear" type="checkbox" name="yearColumn" value="Year"> Year
+         <input id="filterDescription" type="checkbox" name="DescriptionColumn" value="Description"> Description
+         <button onclick="checkAll()" type="button">Check all</button>
+         <button onclick="uncheckAll()" type="button">Unheck all</button>
+     
+         <div class="searchMenu">
+         <input onkeyup="SearchFeature()" id="inputSearch" type="text" placeholder="Enter text...">   
+         <button onclick="SearchFeature()" type="button">Search</button>
+         </div>
+     </div>
+     <!-- search button FINISH -->
 
-    <div class="container">
-            <form class="searchMenu">
-            <input type="text" placeholder="Enter text...">   
-            <button type="search">Search</button>
-            </form>
-        </div>
-
-    <div class="container">
-        <div class="contentTable">
-
+    <!-- This div to display data that is recieved from databese or from user -->
+    <div class="containerTester">
+        <p><b>Content from the form</b></p>
+        <div class="tableView">
+            <!-- <p id="answer"></p> -->
+            <!-- Table to display JSON file -->
+            <table id="tableProject">
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Year</th>
+                        <th>Description</th>
+                    </tr>
+                </table>
         </div>
     </div>
+    <!-- End of table to display JSON file -->
 
     <div class="container">
         <div class="footer">
-    <div class="content-wrap">
-	
-        <h2><b>Keep in touch!</b></h2>
-        
-        <div class="contact-info">
-        <a href="https://www.linkedin.com" target="_blank">Linkedin</a>
-        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-            <p>We strongly recommend to visit this page <a href="" target="_blank"> for more information.</p>
-       
-    </div>
-        
-    <p>Copyright 2019 by TEAM</p>
-    </div>
+            <div class="content-wrap">
+
+                <!-- <h2><b>Keep in touch!</b></h2>
+
+                <div class="contact-info">
+                    <a href="https://www.linkedin.com" target="_blank">Linkedin</a>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                    <p>We strongly recommend to visit this page <a href="" target="_blank"> for more information.</p>
+
+                </div> -->
+
+                <p>Copyright 2019 by TEAM</p>
+            </div>
         </div>
     </div>
 
